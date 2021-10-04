@@ -1,4 +1,4 @@
-name: Maven Build CI for Pull requests
+name: Build CI for Pull requests
 
 on:
   pull_request:
@@ -19,6 +19,6 @@ jobs:
           distribution: 'zulu'
           check-latest: true
 
-      - name: Maven build
+      - name: Gradle build
         run:
-            mvn -B -V clean install
+          ./gradlew clean build
