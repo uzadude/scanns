@@ -13,10 +13,11 @@ import org.testng.annotations.Test
 
 /* A simple end-to-end run of a nearest neighbor search using the driver */
 class ModelTest extends SparkTestUtils {
-  // @Test
+  
+  @Test
   // This is unable to be run currently due to some PriorityQueue serialization issues
   def testModel(): Unit = sparkTest("modelTest") {
-    sc.getConf.registerKryoClasses(Array(classOf[TopNQueue], classOf[SignRandomProjectionHashFunction]))
+    //sc.getConf.registerKryoClasses(Array(classOf[TopNQueue], classOf[SignRandomProjectionHashFunction]))
 
     val file = "src/test/resources/nn/example.tsv"
     val data = sc.textFile(file)
